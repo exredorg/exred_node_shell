@@ -45,7 +45,7 @@ defmodule Exred.Node.Shell do
   
   @impl true
   def handle_msg(msg, state) do
-    cmd = state.config.command
+    cmd = state.config.command.value
     Logger.debug "Executing #{inspect cmd}"
     res = %Result{out: output, err: error, status: status} = Porcelain.shell( cmd )
     Logger.debug "Result: #{inspect res}"

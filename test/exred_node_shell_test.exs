@@ -3,7 +3,7 @@ defmodule Exred.Node.ShellTest do
   doctest Exred.Node.Shell
 
   test "runs echo" do
-    state = %{config: %{command: "echo hello"}}
+    state = %{config: %{command: %{value: "echo hello"}}}
     msg = %{}
     {out, state} = Exred.Node.Shell.handle_msg msg, state
     assert out.payload.status == 0
