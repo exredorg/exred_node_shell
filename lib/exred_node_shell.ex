@@ -36,7 +36,7 @@ defmodule ExredNodeShell do
     },
   }
   @info @moduledoc
-  @ui_attributes %{fire_button: false, left_icon: computer, right_icon: nil}
+  @ui_attributes %{fire_button: false, left_icon: "computer", right_icon: nil}
   
   use Exred.Library.NodePrototype
   alias Porcelain.Result
