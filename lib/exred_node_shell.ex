@@ -1,4 +1,4 @@
-defmodule ExredNodeShell do
+defmodule Exred.Node.Shell do
   @moduledoc """
   Executes shell calls.
   
