@@ -1,13 +1,13 @@
 defmodule Exred.Node.Shell do
   @moduledoc """
-  Executes shell calls.
+  Executes shell calls when receives a message.
   
-  **Incoming message format**  
-  ```elixir
-  msg = %{
-    payload :: String.t()
-  }
-  ```
+  The incoming message content is ignored.
+  The node executes the configured command in a new shell and
+  updates the payload. The rest of the incoming message is unaltered.
+  
+  **Incoming message format**
+  N/A
   
   **Outgoing message format**
   ```elixir
@@ -16,6 +16,7 @@ defmodule Exred.Node.Shell do
       out :: String.t,
       err :: String.t,
       status :: integer
+    }
   }
   ```
   """
