@@ -53,5 +53,9 @@ defmodule Exred.Node.Shell do
     out = Map.put(msg, :payload, res)
     {out, state}
   end
-
+  
+  def handle_msg(msg, state) do
+    Logger.warn "UNHANDLED MSG node: #{state.node_id} #{get_in(state.config, [:name, :value])} msg: #{inspect msg}"
+    {msg, state}
+  end
 end
