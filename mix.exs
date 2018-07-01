@@ -4,7 +4,7 @@ defmodule Exred.Node.Shell.Mixfile do
   def project do
     [
       app: :exred_node_shell,
-      version: "0.1.6",
+      version: "0.1.7",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),

@@ -56,6 +56,6 @@ defmodule Exred.Node.Shell do
   
   def handle_msg(msg, state) do
     Logger.warn "UNHANDLED MSG node: #{state.node_id} #{get_in(state.config, [:name, :value])} msg: #{inspect msg}"
-    {msg, state}
+    {nil, state}
   end
 end
