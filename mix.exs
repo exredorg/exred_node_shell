@@ -1,6 +1,8 @@
 defmodule Exred.Node.Shell.Mixfile do
   use Mix.Project
 
+  @description "Runs shell commands"
+
   def project do
     [
       app: :exred_node_shell,
@@ -8,6 +10,8 @@ defmodule Exred.Node.Shell.Mixfile do
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
       deps: deps(),
+      description: @description,
+      package: package(),
       aliases: aliases()
     ]
   end
@@ -27,12 +31,12 @@ defmodule Exred.Node.Shell.Mixfile do
 
   defp deps do
     [
-      {:exred_library, "~> 0.1.11"},
       {:ex_doc, "~> 0.18.0", only: :dev, runtime: false},
+      {:exred_library, "~> 0.1.11"},
       {:porcelain, "~> 2.0"}
     ]
   end
-  
+
   defp package do
     %{
       licenses: ["MIT"],
