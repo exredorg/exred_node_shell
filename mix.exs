@@ -2,13 +2,14 @@ defmodule Exred.Node.Shell.Mixfile do
   use Mix.Project
 
   @description "Runs shell commands"
+  @version File.read!("VERSION") |> String.trim()
 
   def project do
     [
       app: :exred_node_shell,
-      version: "0.1.8",
+      version: @version,
       elixir: "~> 1.5",
-      start_permanent: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: @description,
       package: package(),
@@ -31,8 +32,8 @@ defmodule Exred.Node.Shell.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false},
-      {:exred_library, "~> 0.1.11"},
+      {:ex_doc, "~> 0.19.0", only: :dev, runtime: false},
+      {:exred_nodeprototype, "~> 0.2"},
       {:porcelain, "~> 2.0"}
     ]
   end
@@ -42,10 +43,10 @@ defmodule Exred.Node.Shell.Mixfile do
       licenses: ["MIT"],
       maintainers: ["Zsolt Keszthelyi"],
       links: %{
-        "GitHub" => "https://github.com/exredorg/exred_node_shell",
+        "GitHub" => "https://github.com/exredorg/exred_node_shell.git",
         "Exred" => "http://exred.org"
       },
-      files: ["lib", "mix.exs", "README.md", "LICENSE"]
+      files: ["lib", "mix.exs", "README.md", "LICENSE", "VERSION"]
     }
   end
 end
